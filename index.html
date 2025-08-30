@@ -1,0 +1,780 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intesab Hussain Sadhayo - Senior Researcher</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background: linear-gradient(135deg, #d4d8e9 0%, #9681e1 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .resume-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 20px 0;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #1257be 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+            margin: 0 auto 20px;
+            background: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: #666;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .name {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .title {
+            font-size: 1.3em;
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #e74c3c;
+        }
+
+        .profile-text {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
+            text-align: justify;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .experience-item, .education-item, .project-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .experience-item:hover, .education-item:hover, .project-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .job-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .company {
+            font-weight: 500;
+            color: #3498db;
+            margin-bottom: 5px;
+        }
+
+        .company a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .company a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        .date {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            color: #555;
+            line-height: 1.4;
+        }
+
+        .description ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .description li {
+            margin-bottom: 5px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .skill-category h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .skill-tag {
+            background: #3498db;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 500;
+        }
+
+        .publications {
+            display: grid;
+            gap: 15px;
+        }
+
+        .publication {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #27ae60;
+        }
+
+        .publication-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .publication-details {
+            color: #555;
+            font-size: 0.9em;
+        }
+
+        .contact-details {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #9b59b6;
+        }
+
+        .contact-details h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .contact-details p {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .social-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .social-link {
+            background: #3498db;
+            color: white;
+            padding: 12px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: background 0.3s ease;
+            text-align: center;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            box-sizing: border-box;
+        }
+
+        .social-link:hover {
+            background: #2980b9;
+        }
+
+        .leadership-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #f39c12;
+            margin-bottom: 15px;
+        }
+
+        .leadership-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .name {
+                font-size: 2em;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .github-corner {
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .github-corner svg {
+            fill: #3498db;
+            color: white;
+            width: 80px;
+            height: 80px;
+        }
+
+        .github-corner:hover .octo-arm {
+            animation: octocat-wave 560ms ease-in-out;
+        }
+
+        @keyframes octocat-wave {
+            0%, 100% { transform: rotate(0); }
+            20%, 60% { transform: rotate(-25deg); }
+            40%, 80% { transform: rotate(10deg); }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="resume-card">
+            <div class="header">
+                <div class="header-content">
+                    <div class="profile-image">
+                        <img src="photo1.jpg" alt="Intesab Hussain Sadhayo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                    </div>
+                    <h1 class="name">Prof. Dr. Intesab Hussain Sadhayo, Ph.D.</h1>
+                    <p class="title">Dean Faculty of Computer Engineering</p>
+                    <p class="title">Director Industrial Liaison</p>
+                    <div class="contact-info">
+                        <div class="contact-item">📍 Nawabshah, Pakistan</div>
+                        <div class="contact-item">📧 intesab@quest.edu.pk</div>
+                        <div class="contact-item">📱 +92-333-2062096 | 📱+92-9370361 </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div class="section">
+                    <h2 class="section-title">Profile</h2>
+                    <p class="profile-text">
+                       I am the Dean of the Faculty of Computer Engineering at Quaid-e-Awam University of Engineering, Science & Technology (QUEST), Nawabshah, where I also serve as a Professor of Telecommunication Engineering and Director of Industrial Liaison. With more than 20 years of academic and research experience, I have contributed extensively to teaching, research, and leadership in higher education. Over the past five years, I have successfully arranged 8000+ internships for undergraduate students, fostering stronger collaboration between industry and academia.
+                        <br><br>
+                        I earned my Ph.D. in Computer Science (2013) from Université Paris Descartes, France (Team LIPADE), where my research focused on Flooding and SPIT-based DoS Problems in VoIP Communication. I also hold a Master 2 Recherche in Interface Specialization (2008) from Université de Rennes 1, France (Team IPR) and a Bachelor’s in Computer System Engineering (2003) from QUEST, Nawabshah.
+                        <br><br>
+                        Throughout my career, I have held diverse academic and leadership roles, including Campus Director at QUEST Larkana Campus, Associate Professor, Assistant Professor, and Lecturer at QUEST, as well as Attaché Temporaire d’Enseignement et de Recherche at Université Paris Descartes, France.
+                        <br><br>
+                        Beyond teaching and research, I have actively contributed to curriculum development and capacity building. I was a Member of the HEC National Curriculum Revision Committee (2014) and played a leading role in achieving QUEST’s first-ever Outcome Based Education (OBE) accreditation. I have also conducted large-scale training programs such as the National Freelance Training Program (1200 trained), People’s IT Program (1000 trained), Industry Academia Bridge Program (400 trained), and the IBA Bootcamp (700 trained).
+                    </p>
+                </div>
+
+                <div class="two-column">
+                    <div class="left-column">
+                        <div class="section">
+                            <h2 class="section-title">Experience</h2>
+                            
+                            <div class="experience-item">
+                                <div class="job-title">Dean, Faculty of Computer Engineering</div>
+                                <div class="company"><a href="https://quest.edu.pk/teacher/50/" target="_blank">Quaid-e-Awam University of Engineering, Science & Technology (QUEST)</a></div>
+                                <div class="date">03/2023 – Present | Nawabshah, Pakistan</div>
+                                <div class="description">
+                                    <ul>
+                                        <li>Leading the Faculty of Computer Engineering, overseeing academic programs, research initiatives, and faculty development.</li>
+                                        <li>Strengthened collaboration with industry and academia to enhance the employability of graduates.</li>
+                                        <li>Initiated reforms for quality assurance and international accreditation of programs.</li>
+        
+                                    </ul>
+                                </div>
+                            </div>
+        <div class="experience-item">
+    <div class="job-title">Director, Industrial Liaison</div>
+    <div class="company"><a href="#" target="_blank">Quaid-e-Awam University of Engineering, Science & Technology (QUEST)</a></div>
+    <div class="date">02/2019 – Present | Nawabshah, Pakistan</div>
+    <div class="description">
+        <ul>
+            <li>Arranged 8000+ internships for undergraduate students in collaboration with national industries.</li>
+            <li>Established strong industry-academia partnerships through bridge programs.</li>
+            <li>Spearheaded entrepreneurship and innovation initiatives for students.</li>
+        </ul>
+    </div>
+</div>                        
+
+<div class="experience-item">
+    <div class="job-title">Professor</div>
+    <div class="company"><a href="#" target="_blank"> Quaid-e-Awam University of Engineering, Science & Technology (QUEST)</a></div>
+    <div class="date">03/2020 – Present | Nawabshah, Pakistan</div>
+    <div class="description">
+        <ul>
+            <li>Supervising Ph.D. and postgraduate research in Network Security, DoS/DDoS Attacks, and Forensics.</li>
+            <li>Published impactful research in reputed international journals and conferences.</li>
+            <li>Mentored early-career faculty and strengthened the departmental research culture.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="experience-item">
+    <div class="job-title">Campus Director</div>
+    <div class="company"><a href="https://quest.edu.pk/" target="_blank">Quaid-e-Awam University of Engineering, Science & Technology (QUEST), Larkana Campus</a></div>
+    <div class="date">05/2019 – 10/2020 | Larkana, Pakistan</div>
+    <div class="description">
+        <ul>
+            <li>Managed campus operations, academic programs, and faculty recruitment.</li>
+            <li>Introduced digital platforms for student services and academic monitoring.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="experience-item">
+    <div class="job-title">Associate Professor</div>
+    <div class="company"><a href="https://quest.edu.pk/" target="_blank">Quaid-e-Awam University of Engineering, Science & Technology (QUEST)</a></div>
+    <div class="date">11/2015 – 03/2020 | Nawabshah, Pakistan</div>
+    <div class="description">
+        <ul>
+            <li>Introduced advanced courses in network security and communication systems.</li>
+            <li>Played a leading role in achieving QUEST’s first-ever Outcome Based Education (OBE) accreditation.</li>
+            <li>Served as Member of HEC National Curriculum Revision Committee (2014).</li>
+        </ul>
+    </div>
+</div>
+
+<div class="experience-item">
+    <div class="job-title">Assistant Professor</div>
+    <div class="company"><a href="https://quest.edu.pk/" target="_blank">Quaid-e-Awam University of Engineering, Science & Technology (QUEST)</a></div>
+    <div class="date">07/2013 – 11/2015 | Nawabshah, Pakistan</div>
+    <div class="description">
+        <ul>
+            <li>Continued research collaboration with French institutions in VoIP security.</li>
+            <li>Conducted People’s Information Technology Program, successfully training 1000 participants.</li>
+            <li>Guided final-year projects in cybersecurity and telecommunication.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="experience-item">
+    <div class="job-title">Attaché Temporaire d’Enseignement et de Recherche (ATER)</div>
+    <div class="company"><a href="https://u-paris.fr/" target="_blank">Université Paris Descartes</a></div>
+    <div class="date">09/2011 – 02/2013 | Paris, France</div>
+    <div class="description">
+        <ul>
+            <li>Taught undergraduate courses in networking and distributed systems.</li>
+            <li>Conducted research on Flooding and SPIT-based DoS attacks in VoIP communication.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="experience-item">
+    <div class="job-title">Lecturer</div>
+    <div class="company"><a href="https://quest.edu.pk/" target="_blank">Quaid-e-Awam University of Engineering, Science & Technology (QUEST)</a></div>
+    <div class="date">01/2004 – 05/2013 | Nawabshah, Pakistan</div>
+    <div class="description">
+        <ul>
+            <li>Taught core courses in computer networks, programming, and telecommunication.</li>
+            <li>Conducted National Freelance Training Program (trained 1200 participants) and IBA Bootcamp (trained 700 participants).</li>
+            <li>Guided undergraduate projects and contributed to faculty development initiatives.</li>
+        </ul>
+    </div>
+</div>
+
+
+
+                        <div class="section">
+                            <h2 class="section-title">Education</h2>
+                            
+ <div class="education-item">
+    <div class="job-title">Ph.D. in Computer Science (2013)</div>
+    <div class="company"><a href="https://u-paris.fr/en/" target="_blank">Université Paris Descartes, France — Team LIPADE</a></div>
+    <div class="description">Research Focus: Flooding and SPIT-based DoS Problems in VoIP Communication</div>
+</div>
+
+<div class="education-item">
+    <div class="job-title">Master 2 Recherche, Spécialité Interface (2008)</div>
+    <div class="company"><a href="https://international.univ-rennes1.fr/" target="_blank">Université de Rennes 1, Rennes, France — Team IPR</a></div>
+    <div class="description">Focus: Research in Human-Computer Interaction and Communication Systems</div>
+</div>
+
+<div class="education-item">
+    <div class="job-title">Bachelor in Computer Systems Engineering (2003)</div>
+    <div class="company"><a href="https://quest.edu.pk/" target="_blank">Quaid-e-Awam University of Engineering, Science &amp; Technology (QUEST), Pakistan</a></div>
+    <div class="description">Focus: Computer Systems, Networks, and Telecommunication</div>
+</div>
+
+</div>
+
+                      <!--  <div class="section">
+                            <h2 class="section-title">Leadership Experience</h2>
+                            
+                            <div class="leadership-item">
+                                <div class="leadership-title">Chairman, Artificial Intelligence Department</div>
+                                <div class="date">Quaid-e-Awam University of Engineering, Science &amp; Technology (QUEST), Pakistan (Aug 2021 - Jul 2022)</div>
+                            </div>
+
+                            <div class="leadership-item">
+                                <div class="leadership-title">Chairman, Computer Systems Engineering Department</div>
+                                <div class="date">Quaid-e-Awam University of Engineering, Science &amp; Technology (QUEST) (Oct 2018 - Oct 2021)</div>
+                            </div>
+
+                        </div>
+                    </div>-->
+
+                    <div class="right-column">
+                        <div class="section">
+                            <h2 class="section-title">Contact &amp; Personal Details</h2>
+                            <div class="contact-details">
+                                <p><strong>Office address:</strong> Dean of Faculty of Engineering, QUEST, Mawabshah</p>
+                                <p><strong>Phone/WhatsApp:</strong> +9233320620965</p>
+                                <p><strong>Email:</strong> intesab@quest.edu.pk</p>
+                                <p><strong>Date of Birth:</strong> NA</p>
+                                <p><strong>Nationality:</strong> Pakistan</p>
+                                <p><strong>Languages:</strong> English (C2/Proficient), Urdu (native), Sindhi (native), French (A2/Elementary).</p>
+                                
+                               <!-- <div class="social-links">
+                                    <a href="https://www.linkedin.com/in/uakhan80" class="social-link" target="_blank">🔗 LinkedIn</a>
+                                    <a href="https://github.com/umairalipathan1980" class="social-link" target="_blank">⚡ GitHub</a>
+                                    <a href="https://medium.com/@umairali.khan" class="social-link" target="_blank">📝 Medium</a>
+                                    <a href="https://orcid.org/0000-0002-2034-1211" class="social-link" target="_blank">🆔 ORCID</a>
+                                    <a href="https://web.facebook.com/umair.a.khan.90" class="social-link" target="_blank">👤 Facebook</a>
+                                </div> -->
+                            </div>
+                        </div>
+
+                        <div class="section">
+                            <h2 class="section-title">Core Skills</h2>
+                            <div class="skills-grid">
+                                <div class="skill-category">
+                                    <h4>Programming Languages</h4>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Python</span>
+                                        <span class="skill-tag">C/C++</span>
+                                        <span class="skill-tag">MATLAB</span>
+                                        <span class="skill-tag">CUDA C</span>
+                                        <span class="skill-tag">Arduino</span>
+                                        <span class="skill-tag">VoIP</span>
+                                        <span class="skill-tag">WSNs/MANETs</span>
+                                        <span class="skill-tag">Cyber Security</span>
+                                    </div>
+                                </div>
+
+                              <!--  <div class="skill-category">
+                                    <h4>AI/ML Frameworks</h4>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">TensorFlow</span>
+                                        <span class="skill-tag">Keras</span>
+                                        <span class="skill-tag">PyTorch</span>
+                                        <span class="skill-tag">CatBoost</span>
+                                        <span class="skill-tag">SHAP</span>
+                                    </div>
+                                </div> -->
+
+                                <div class="skill-category">
+                                    <h4>Research &amp; Development</h4>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Project Management</span>
+                                        <span class="skill-tag">Team Building</span>
+                                        <span class="skill-tag">Academic Writing</span>
+                                        <span class="skill-tag">Peer Review</span>
+                                    </div>
+                                </div>
+
+                              <!-- <div class="skill-category">
+                                    <h4>AI Specializations</h4>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Machine/Deep Learning</span>
+                                        <span class="skill-tag">AI Agents</span>
+                                        <span class="skill-tag">RAG, MCP</span>
+                                        <span class="skill-tag">Knowledge extraction and processing with LLMs</span>
+                                        
+                                    </div> 
+                                </div> -->
+                            </div>
+                        </div>
+
+                        <div class="section">
+                            <h2 class="section-title">Hobbies</h2>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Programming</span>
+                                <span class="skill-tag">Professional Article Writing</span>
+                                <span class="skill-tag">Book Reading</span>
+                                <span class="skill-tag">Behavioral Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+              <!--  <div class="section">
+                    <h2 class="section-title">Ongoing Projects</h2>
+                    
+                    <div class="project-item">
+                        <div class="job-title"><a href="https://www.fairedih.fi/" target="_blank">FAIR: Finnish AI Region</a></div>
+                        <div class="company">Role: AI consultant, researcher, AI developer</div>
+                        <div class="date">Funding: European Commission, Business Finland, The City of Helsinki Innovation Fund</div>
+                        <div class="description">
+                            Providing technical AI consultancy to companies, Designing AI roadmaps, developing proof of concepts, helping in securing funding.
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="job-title"><a href="https://www.haaga-helia.fi/en/rdi-projects/gaik" target="_blank">GAIK: Generative AI Enhanced Knowledge Management in Busines</a></div>
+                        <div class="company">Role: Senior researcher</div>
+                        <div class="date">Funding: ERDF, Finland</div>
+                        <div class="description">
+                            Developing a GenAI based knowledge management toolkit for businesses.
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="job-title"><a href="https://www.haaga-helia.fi/en/rdi-projects/metacog" target="_blank">METACOG</a></div>
+                        <div class="company">Role: Senior researcher</div>
+                        <div class="date">Funding: European Union (Erasmus+)</div>
+                        <div class="description">
+                            AI literacy programme for managing disinformation in European societies
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="job-title"><a href="https://www.haaga-helia.fi/en/rdi-projects/alfa-labs" target="_blank">ALFA Labs</a></div>
+                        <div class="company">Role: Senior researcher</div>
+                        <div class="date">Funding: European Union (Erasmus+)</div>
+                        <div class="description">
+                            Advancing digital education and AI integration in higher education.
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="job-title"><a href="https://ulysseus.eu/innovation-hubs/artificial-intelligence/" target="_blank">Applied AI for Business and Education Hub with the Ulysseus European University</a></div>
+                        <div class="company">Role: Senior researcher &amp; member steering committee</div>
+                        <div class="date">Funding: European Commission</div>
+                        <div class="description">
+                            Applied research on the adoption of AI in business and education.
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="section">
+    <h2 class="section-title">Selected Publications</h2>
+    <div class="publications">
+
+        <div class="publication">
+            <div class="publication-title">A technique for safeguarding legitimate users from media access control (MAC) spoofing attacks</div>
+            <div class="publication-details">M.M. Naeem, I. Hussain, M.M.S. Missen - Journal of Computing & Biomedical Informatics 6 (02), 160-171, 2024</div>
+        </div>
+
+        <div class="publication">
+            <div class="publication-title">A novel energy-efficient clustering algorithm for more sustainable wireless sensor networks enabled smart cities applications</div>
+            <div class="publication-details">Z. Yousif, I. Hussain, S. Djahel, Y. Hadjadj-Aoul - Journal of Sensor and Actuator Networks 10 (3), 50, 2021</div>
+        </div>
+
+        <div class="publication">
+            <div class="publication-title">A survey on registration hijacking attack consequences and protection for Session Initiation Protocol (SIP)</div>
+            <div class="publication-details">M.M. Naeem, I. Hussain, M.M.S. Missen - Computer Networks 175, 107250, 2020</div>
+        </div>
+
+        <div class="publication">
+            <div class="publication-title">Evaluating Reactive Routing Protocols of VANETs using 2K Factorial Analysis</div>
+            <div class="publication-details">Z. Yousif, I. Hussain, S. Parveen, F. Umer, N. Naeem - Indian Journal of Science and Technology 12 (20), 1-10, 2019</div>
+        </div>
+
+        <div class="publication">
+            <div class="publication-title">Analysis and detection of DDoS attacks targeting virtualized servers</div>
+            <div class="publication-details">N. Ahmed, I. Hussain, Z. Yousaf - International Journal of Computer Science and Network Security 19 (1), 128-133, 2019</div>
+        </div>
+
+        <div class="publication">
+            <div class="publication-title">A comprehensive study of flooding attack consequences and countermeasures in Session Initiation Protocol (SIP)</div>
+            <div class="publication-details">I. Hussain, S. Djahel, Z. Zhang, F. Naït-Abdesselam - Security and Communication Networks 8 (18), 4436-4451, 2015</div>
+        </div>
+
+        <div class="publication">
+            <div class="publication-title">Computing Angular Correlation Function using Message Passing Interface</div>
+            <div class="publication-details">F.A. Jokhio, U.A. Khan, I.H. Sadhayo - Engineering, Science & Technology, 38, 2015</div>
+        </div>
+
+        <div class="publication">
+            <div class="publication-title">Preventing SPIT with Naive Bayes in VoIP Communication</div>
+            <div class="publication-details">I.H. Sadhayo, F.A. Jokhio, U.A. Khan, P. Kumar, N.A. Memon - Feedback 13 (1), 2014</div>
+        </div>
+
+        <div class="publication">
+            <div class="publication-title">Solving flooding and SPIT based denial of service problems in voice over IP communications</div>
+            <div class="publication-details">I. Hussain - Université Paris Descartes, 2013</div>
+        </div>
+
+        <div class="publication">
+            <div class="publication-title">A lightweight countermeasure to cope with flooding attacks against Session Initiation Protocol</div>
+            <div class="publication-details">I. Hussain, S. Djahel, D. Geneiatakis, F. Naït-Abdesselam - 6th Joint IFIP Wireless and Mobile Networking Conference (WMNC), 1-5, 2013</div>
+        </div>
+
+        <div class="publication">
+            <div class="publication-title">Strategy based proxy to secure user agent from flooding attack in SIP</div>
+            <div class="publication-details">I. Hussain, F. Naït-Abdesselam - 7th International Wireless Communications and Mobile Computing Conference (IWCMC), 2011</div>
+        </div>
+
+        <div class="publication">
+            <div class="publication-title">Effect of Al–Cr doping on the structural, magnetic and dielectric properties of strontium hexaferrite nanomaterials</div>
+            <div class="publication-details">M. Naeem, M. Javed, I. Hussain - Journal of Magnetism and Magnetic Materials 323, 259-263, 2011</div>
+        </div>
+
+        <div class="publication">
+            <div class="publication-title">Enhancing IEEE 802.15.4 for low-latency, bandwidth, and energy critical WSN applications</div>
+            <div class="publication-details">P. Kumar, M. Gunes, I. Hussain - 4th International Conference on Emerging Technologies, 2008</div>
+        </div>
+
+    </div>
+</div>
+                <div class="section">
+                    <h2 class="section-title">Other Scientific Activities</h2>
+                    <div class="description">
+                        <ul>
+                            <li>Supervising Master and Ph.D. theses</li>
+                            <li>Professional article writing on AI applications and adoption</li>
+                            <li>Regular reviewer of various peer-reviewed academic journals and conferences</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
